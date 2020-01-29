@@ -430,27 +430,14 @@ main .faq-container .faq-container-menu .question img {
 }
 
 main .faq-container .faq-container-menu .answer {
-  padding-bottom: 19px;
+  overflow: hidden;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  line-height: 0;
 }
 
-main .faq-container .faq-container-menu .answer .example-enter {
-  max-height: 0;
-}
-
-main .faq-container .faq-container-menu .answer .example-enter.example-enter-active {
-  max-height: 250px;
-  -webkit-transition: max-height 1s ease-in;
-  transition: max-height 1s ease-in;
-}
-
-main .faq-container .faq-container-menu .answer .example-leave {
-  max-height: 250px;
-}
-
-main .faq-container .faq-container-menu .answer .example-leave.example-leave-active {
-  max-height: 0;
-  -webkit-transition: max-height 1s ease-in;
-  transition: max-height 1s ease-in;
+main .faq-container .faq-container-menu .answer.active {
+  line-height: 1.5;
 }
 
 main .faq-container .faq-container-menu .answer p {
@@ -623,21 +610,23 @@ footer .footer-container .social-icons {
 
 .example-enter {
   max-height: 0;
+  overflow: hidden;
 }
 
 .example-enter.example-enter-active {
-  max-height: 250px;
-  -webkit-transition: max-height 500ms ease-in;
-  transition: max-height 500ms ease-in;
+  max-height: 200px;
+  -webkit-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
 }
 
 .example-leave {
-  max-height: 250px;
+  max-height: 200px;
 }
 
 .example-leave.example-leave-active {
   max-height: 0;
-  -webkit-transition: max-height 500ms ease-in;
-  transition: max-height 500ms ease-in;
+  overflow: hidden;
+  -webkit-transition: all 300ms ease-in;
+  transition: all 300ms ease-in;
 }
 /*# sourceMappingURL=index.css.map */
