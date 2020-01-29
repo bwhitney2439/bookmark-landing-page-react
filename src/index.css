@@ -430,10 +430,7 @@ main .faq-container .faq-container-menu .question img {
 }
 
 main .faq-container .faq-container-menu .answer {
-  max-height: 0;
-  overflow: hidden;
-  -webkit-transition: max-height 0.5s ease-in-out;
-  transition: max-height 0.5s ease-in-out;
+  padding-bottom: 19px;
 }
 
 main .faq-container .faq-container-menu .answer.active {

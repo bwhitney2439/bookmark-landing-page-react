@@ -1,15 +1,22 @@
 import React, { useState, useRef } from "react";
+import styled, { keyframes } from "styled-components";
+// import { slideInDown } from "react-animations";
+import slideInDown from "react-animations/lib/slideInDown";
+
+const slideInDownAnimation = keyframes`${slideInDown}`;
+
+const slideInDownDiv = styled.div`
+  animation: 1s ${slideInDownAnimation};
+`;
 
 const Faq = () => {
   const [activeAnswers, setActiveAnswers] = useState([]);
 
-  const questionOneRef = useRef(null);
+  // const questionOneRef = useRef(null);
 
   const handleActiveAnswer = currentAnswer => {
     console.log(activeAnswers);
     if (activeAnswers.includes(currentAnswer)) {
-      //   const newActveAnswers = [...activeAnswers];
-
       setActiveAnswers(
         activeAnswers.filter(answer => {
           return answer !== currentAnswer;
@@ -18,14 +25,12 @@ const Faq = () => {
     } else {
       setActiveAnswers([...activeAnswers, currentAnswer]);
     }
-
-    // console.log(activeAnswers);
   };
 
-  const handleClick = () => {
-    console.log("its working");
-    questionOneRef.current.classList.toggle("active");
-  };
+  // const handleClick = () => {
+  //   console.log("its working");
+  //   questionOneRef.current.classList.toggle("active");
+  // };
 
   return (
     <section class="faq-container">
@@ -39,17 +44,21 @@ const Faq = () => {
 
       <div class="faq-container-menu">
         <hr />
-        <div class="question" onClick={handleClick}>
+        <div class="question" onClick={() => handleActiveAnswer("answer1")}>
           <p>What is Bookmark?</p>
           <img src={require("./images/icon-arrow.svg")} alt="" />
         </div>
-        <div ref={questionOneRef} class="answer">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-            tincidunt justo eget ultricies fringilla. Phasellus blandit ipsum
-            quis quam ornare mattis.
-          </p>
-        </div>
+        {activeAnswers.includes("answer1") ? (
+          <slideInDownDiv>
+            <div class="answer">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                tincidunt justo eget ultricies fringilla. Phasellus blandit
+                ipsum quis quam ornare mattis.
+              </p>
+            </div>
+          </slideInDownDiv>
+        ) : null}
         <hr />{" "}
         <div class="question" onClick={() => handleActiveAnswer("answer2")}>
           <p>How can I request a new browser?</p>

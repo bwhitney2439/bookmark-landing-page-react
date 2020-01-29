@@ -34,6 +34,7 @@ const Features = () => {
         >
           Speedy Searching
         </a>
+
         <a
           class={activeTab === "tab3" ? "selected" : ""}
           onClick={e => {
