@@ -433,8 +433,24 @@ main .faq-container .faq-container-menu .answer {
   padding-bottom: 19px;
 }
 
-main .faq-container .faq-container-menu .answer.active {
-  max-height: 500px;
+main .faq-container .faq-container-menu .answer .example-enter {
+  max-height: 0;
+}
+
+main .faq-container .faq-container-menu .answer .example-enter.example-enter-active {
+  max-height: 250px;
+  -webkit-transition: max-height 1s ease-in;
+  transition: max-height 1s ease-in;
+}
+
+main .faq-container .faq-container-menu .answer .example-leave {
+  max-height: 250px;
+}
+
+main .faq-container .faq-container-menu .answer .example-leave.example-leave-active {
+  max-height: 0;
+  -webkit-transition: max-height 1s ease-in;
+  transition: max-height 1s ease-in;
 }
 
 main .faq-container .faq-container-menu .answer p {
@@ -603,5 +619,25 @@ footer .footer-container .social-icons {
   to {
     width: 100%;
   }
+}
+
+.example-enter {
+  max-height: 0;
+}
+
+.example-enter.example-enter-active {
+  max-height: 250px;
+  -webkit-transition: max-height 500ms ease-in;
+  transition: max-height 500ms ease-in;
+}
+
+.example-leave {
+  max-height: 250px;
+}
+
+.example-leave.example-leave-active {
+  max-height: 0;
+  -webkit-transition: max-height 500ms ease-in;
+  transition: max-height 500ms ease-in;
 }
 /*# sourceMappingURL=index.css.map */

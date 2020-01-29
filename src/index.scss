@@ -362,7 +362,25 @@ main {
         // transition: max-height 0.5s ease-in-out;
 
         &.active {
-          max-height: 500px;
+          //   max-height: 500px;
+        }
+
+        .example-enter {
+          max-height: 0;
+        }
+
+        .example-enter.example-enter-active {
+          max-height: 250px;
+          transition: max-height 1s ease-in;
+        }
+
+        .example-leave {
+          max-height: 250px;
+        }
+
+        .example-leave.example-leave-active {
+          max-height: 0;
+          transition: max-height 1s ease-in;
         }
 
         p {
@@ -493,4 +511,22 @@ footer {
     width: 100%;
     // transform: translateX(0%);
   }
+}
+
+.example-enter {
+  max-height: 0;
+}
+
+.example-enter.example-enter-active {
+  max-height: 250px;
+  transition: max-height 500ms ease-in;
+}
+
+.example-leave {
+  max-height: 250px;
+}
+
+.example-leave.example-leave-active {
+  max-height: 0;
+  transition: max-height 500ms ease-in;
 }
