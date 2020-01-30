@@ -489,10 +489,14 @@ footer {
 }
 
 @keyframes answer-content {
-  from {
+  0% {
     width: 0;
     // transform: translateX(5%);
   }
+  30% {
+    width: 30%;
+  }
+
   to {
     width: 100%;
     // transform: translateX(0%);
@@ -508,7 +512,7 @@ footer {
 .example-enter.example-enter-active {
   max-height: 200px;
   // opacity: 1;
-  transition: all 300ms ease-in;
+  transition: all 500ms ease-in-out;
 }
 
 .example-leave {
@@ -520,5 +524,25 @@ footer {
   // opacity: 0;
   max-height: 0;
   overflow: hidden;
-  transition: all 300ms ease-in;
+  transition: all 500ms ease-in-out;
+}
+
+// Arrow Icon React Animation
+
+.icon-enter {
+  opacity: 0.1;
+}
+
+.icon-enter.icon-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in-out;
+}
+
+.icon-leave {
+  opacity: 1;
+}
+
+.icon-leave.icon-leave-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in-out;
 }

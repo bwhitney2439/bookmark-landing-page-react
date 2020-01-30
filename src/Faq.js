@@ -56,23 +56,35 @@ const Faq = () => {
       </div>
       <div class="faq-container-menu">
         <hr />
-        <div class="question" onClick={handleClick}>
+        <div class="question" onClick={() => handleActiveAnswer("answer1")}>
           <p>What is Bookmark?</p>
-          <img src={require("./images/icon-arrow.svg")} alt="" />
+          <CSSTransitionGroup
+            transitionName="icon"
+            transitionEnterTimeout={500}
+            transitionLeaveTimeout={500}
+          >
+            {activeAnswers.includes("answer1") ? (
+              <img src={require("./images/icon-arrow-close.svg")} alt="" />
+            ) : (
+              <img src={require("./images/icon-arrow.svg")} alt="" />
+            )}
+          </CSSTransitionGroup>
         </div>
-        {/* <CSSTransitionGroup
+        <CSSTransitionGroup
           transitionName="example"
-          transitionEnterTimeout={300}
-          transitionLeaveTimeout={300}
-        > */}
-        <div class="answer" ref={answer1}>
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
-            tincidunt justo eget ultricies fringilla. Phasellus blandit ipsum
-            quis quam ornare mattis.
-          </p>
-        </div>
-        {/* </CSSTransitionGroup> */}
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}
+        >
+          {activeAnswers.includes("answer1") ? (
+            <div class="answer">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+                tincidunt justo eget ultricies fringilla. Phasellus blandit
+                ipsum quis quam ornare mattis.
+              </p>
+            </div>
+          ) : null}
+        </CSSTransitionGroup>
         <hr />{" "}
         <div class="question" onClick={() => handleActiveAnswer("answer2")}>
           <p>How can I request a new browser?</p>
@@ -80,8 +92,8 @@ const Faq = () => {
         </div>
         <CSSTransitionGroup
           transitionName="example"
-          transitionEnterTimeout={300}
-          transitionLeaveTimeout={300}
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}
         >
           {activeAnswers.includes("answer2") ? (
             <div class="answer">
@@ -103,8 +115,8 @@ const Faq = () => {
         </div>
         <CSSTransitionGroup
           transitionName="example"
-          transitionEnterTimeout={300}
-          transitionLeaveTimeout={300}
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}
         >
           {activeAnswers.includes("answer3") ? (
             <div class="answer">
@@ -124,8 +136,8 @@ const Faq = () => {
         </div>
         <CSSTransitionGroup
           transitionName="example"
-          transitionEnterTimeout={300}
-          transitionLeaveTimeout={300}
+          transitionEnterTimeout={500}
+          transitionLeaveTimeout={500}
         >
           {activeAnswers.includes("answer4") ? (
             <div class="answer">
