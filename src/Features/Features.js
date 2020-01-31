@@ -1,24 +1,62 @@
 import React, { useState } from "react";
-
 import Tab from "./Tab";
 import { ReactComponent as FeatureImage1 } from "../images/illustration-features-tab-1.svg";
 import { ReactComponent as FeatureImage2 } from "../images/illustration-features-tab-2.svg";
 import { ReactComponent as FeatureImage3 } from "../images/illustration-features-tab-3.svg";
 
+import styled from "styled-components";
+
+const FeaturesContainer = styled.div`
+  position: relative;
+  margin-bottom: 149px;
+`;
+
+const FeaturesHeader = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  width: 540px;
+  height: 152px;
+  margin: auto;
+  margin-bottom: 72px;
+`;
+
+const FeaturesTabs = styled.div`
+  position: relative;
+  width: 730px;
+  height: 49px;
+  display: flex;
+  justify-content: space-around;
+  margin: auto;
+  margin-bottom: 72px;
+`;
+
+const FeatureTab = styled.a`
+  text-align: center;
+  text-decoration: none;
+  height: 100%;
+  width: 243px;
+  font-size: 16px;
+  color: #252b46;
+  border-bottom: 1px solid rgb(155, 155, 155);
+  transition: border-bottom 0.3s ease-in-out;
+`;
+
 const Features = () => {
   const [activeTab, setActiveTab] = useState("");
 
   return (
-    <section class="features-container" id="features">
-      <div class="features-container-header">
+    <FeaturesContainer id="features">
+      <FeaturesHeader>
         <h2>Features</h2>
         <p>
           Our aim is to make it quick and easy for you to access your favourite
           websites. Your bookmarks sync between your devices so you can access
           them on the go.
         </p>
-      </div>
-      <div class="features-container-tabs">
+      </FeaturesHeader>
+      <FeaturesTabs>
         <a
           onClick={e => {
             e.preventDefault();
@@ -48,7 +86,7 @@ const Features = () => {
           Easy Sharing
         </a>
         <div class={`slider ${activeTab}`}></div>
-      </div>
+      </FeaturesTabs>
 
       <div class="features-container-slideshow">
         {activeTab === "" ? (
@@ -96,7 +134,7 @@ const Features = () => {
         ) : null}
       </div>
       <div class="curved-rectangle"></div>
-    </section>
+    </FeaturesContainer>
   );
 };
 

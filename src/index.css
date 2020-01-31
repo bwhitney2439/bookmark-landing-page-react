@@ -166,30 +166,7 @@ main .bookmark .curved-rectangle {
   border-bottom-left-radius: 316.5px;
 }
 
-main .features-container {
-  position: relative;
-  margin-bottom: 149px;
-}
-
-main .features-container .features-container-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  text-align: center;
-  width: 540px;
-  height: 152px;
-  margin: auto;
-  margin-bottom: 72px;
-}
-
-main .features-container .features-container-tabs {
+main .features-container-tabs {
   position: relative;
   width: 730px;
   height: 49px;
@@ -202,7 +179,7 @@ main .features-container .features-container-tabs {
   margin-bottom: 72px;
 }
 
-main .features-container .features-container-tabs a {
+main .features-container-tabs a {
   text-align: center;
   text-decoration: none;
   height: 100%;
@@ -214,7 +191,7 @@ main .features-container .features-container-tabs a {
   transition: border-bottom 0.3s ease-in-out;
 }
 
-main .features-container .features-container-tabs .slider {
+main .features-container-tabs .slider {
   position: absolute;
   bottom: 0;
   left: 0;
@@ -225,20 +202,20 @@ main .features-container .features-container-tabs .slider {
   transition: all 0.6s ease;
 }
 
-main .features-container .features-container-tabs .slider.middle {
+main .features-container-tabs .slider.middle {
   left: 243px;
 }
 
-main .features-container .features-container-tabs .slider.right {
+main .features-container-tabs .slider.right {
   left: 486px;
 }
 
-main .features-container .features-container-slideshow {
+main .features-container-slideshow {
   max-width: 1031px;
   margin: auto;
 }
 
-main .features-container .features-container-slideshow .tab {
+main .features-container-slideshow .tab {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -249,11 +226,9 @@ main .features-container .features-container-slideshow .tab {
       -ms-flex-align: center;
           align-items: center;
   height: 346px;
-  -webkit-transition: opacity 0.5s ease;
-  transition: opacity 0.5s ease;
 }
 
-main .features-container .features-container-slideshow .tab .tab-details {
+main .features-container-slideshow .tab .tab-details {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -268,7 +243,7 @@ main .features-container .features-container-slideshow .tab .tab-details {
   height: 232px;
 }
 
-main .features-container .features-container-slideshow .tab .tab-details button {
+main .features-container-slideshow .tab .tab-details button {
   width: 114px;
   height: 48px;
   border-radius: 5px;
@@ -280,11 +255,11 @@ main .features-container .features-container-slideshow .tab .tab-details button 
   font-size: 14px;
 }
 
-main .features-container .features-container-slideshow .hide {
+main .features-container-slideshow .hide {
   display: none;
 }
 
-main .features-container .curved-rectangle {
+main .curved-rectangle {
   position: absolute;
   left: 0;
   bottom: -10%;

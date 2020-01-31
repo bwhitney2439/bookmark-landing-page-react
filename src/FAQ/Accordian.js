@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { useSpring, animated } from "react-spring";
 const Accordian = props => {
   const [active, setActive] = useState(false);
