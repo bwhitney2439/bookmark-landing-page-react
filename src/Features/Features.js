@@ -57,7 +57,7 @@ const Features = () => {
         </p>
       </FeaturesHeader>
       <FeaturesTabs>
-        <a
+        <FeatureTab
           onClick={e => {
             e.preventDefault();
             setActiveTab("");
@@ -65,8 +65,8 @@ const Features = () => {
           href="./"
         >
           Simple Bookmarking
-        </a>
-        <a
+        </FeatureTab>
+        <FeatureTab
           onClick={e => {
             e.preventDefault();
             setActiveTab("middle");
@@ -74,9 +74,9 @@ const Features = () => {
           href="./"
         >
           Speedy Searching
-        </a>
+        </FeatureTab>
 
-        <a
+        <FeatureTab
           onClick={e => {
             e.preventDefault();
             setActiveTab("right");
@@ -84,7 +84,7 @@ const Features = () => {
           href="./"
         >
           Easy Sharing
-        </a>
+        </FeatureTab>
         <div class={`slider ${activeTab}`}></div>
       </FeaturesTabs>
 
