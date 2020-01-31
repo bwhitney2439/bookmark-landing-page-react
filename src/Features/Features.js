@@ -32,7 +32,7 @@ const FeaturesTabs = styled.div`
   margin-bottom: 72px;
 `;
 
-const FeatureTab = styled.a`
+const FeatureTab = styled.div`
   text-align: center;
   text-decoration: none;
   height: 100%;
@@ -43,6 +43,24 @@ const FeatureTab = styled.a`
   transition: border-bottom 0.3s ease-in-out;
 `;
 
+const FeatureTabSlider = styled.div`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 243px;
+  background-color: #fa5757;
+  transition: all 0.6s ease;
+  cursor: pointer;
+
+  &.middle {
+    left: 243px;
+  }
+
+  &.right {
+    left: 486px;
+  }
+`;
 const Features = () => {
   const [activeTab, setActiveTab] = useState("");
 
@@ -59,33 +77,27 @@ const Features = () => {
       <FeaturesTabs>
         <FeatureTab
           onClick={e => {
-            e.preventDefault();
             setActiveTab("");
           }}
-          href="./"
         >
           Simple Bookmarking
         </FeatureTab>
         <FeatureTab
           onClick={e => {
-            e.preventDefault();
             setActiveTab("middle");
           }}
-          href="./"
         >
           Speedy Searching
         </FeatureTab>
 
         <FeatureTab
           onClick={e => {
-            e.preventDefault();
             setActiveTab("right");
           }}
-          href="./"
         >
           Easy Sharing
         </FeatureTab>
-        <div class={`slider ${activeTab}`}></div>
+        <FeatureTabSlider className={activeTab} />
       </FeaturesTabs>
 
       <div class="features-container-slideshow">

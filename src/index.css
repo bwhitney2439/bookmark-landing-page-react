@@ -179,18 +179,6 @@ main .features-container-tabs {
   margin-bottom: 72px;
 }
 
-main .features-container-tabs a {
-  text-align: center;
-  text-decoration: none;
-  height: 100%;
-  width: 243px;
-  font-size: 16px;
-  color: #252b46;
-  border-bottom: 1px solid #9b9b9b;
-  -webkit-transition: border-bottom 0.3s ease-in-out;
-  transition: border-bottom 0.3s ease-in-out;
-}
-
 main .features-container-tabs .slider {
   position: absolute;
   bottom: 0;

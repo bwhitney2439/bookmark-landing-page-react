@@ -2,7 +2,7 @@
 
 // Primary
 $softblue: hsl(231, 69%, 60%);
-$softred: hsl(0, 94%, 66%);
+$softred: #fa5757;
 
 // Neutral
 $grayishblue: hsl(229, 8%, 60%);
@@ -158,16 +158,6 @@ main {
     margin: auto;
     margin-bottom: 72px;
 
-    a {
-      text-align: center;
-      text-decoration: none;
-      height: 100%;
-      width: 243px;
-      font-size: 16px;
-      color: $verydarkblue;
-      border-bottom: 1px solid rgb(155, 155, 155);
-      transition: border-bottom 0.3s ease-in-out;
-    }
     .slider {
       position: absolute;
       bottom: 0;
