@@ -166,6 +166,7 @@ main {
     }
 
     .features-container-tabs {
+      position: relative;
       width: 730px;
       height: 49px;
       display: flex;
@@ -182,10 +183,21 @@ main {
         color: $verydarkblue;
         border-bottom: 1px solid rgb(155, 155, 155);
         transition: border-bottom 0.3s ease-in-out;
+      }
+      .slider {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        width: 243px;
+        background-color: $softred;
+        transition: all 0.6s ease;
+        &.middle {
+          left: 243px;
+        }
 
-        &.selected {
-          transition: border-bottom 0.3s ease-in-out;
-          border-bottom: 4px solid $softred;
+        &.right {
+          left: 486px;
         }
       }
     }
@@ -195,22 +207,12 @@ main {
       margin: auto;
 
       .tab {
-        display: none;
+        display: flex;
+
         justify-content: space-between;
         align-items: center;
         height: 346px;
-
-        &.active {
-          animation: {
-            name: tab-content;
-            direction: normal;
-            duration: 1s;
-            timing-function: ease-in-out;
-            iteration-count: 1;
-          }
-
-          display: flex;
-        }
+        transition: opacity 0.5s ease;
 
         .tab-details {
           display: flex;
@@ -348,7 +350,7 @@ main {
 
         .image {
           padding-right: 24px;
-          transition: all 0.6s ease;
+          // transition: all 0.6s ease;
           width: 43px;
           height: 12px;
           stroke: $softblue;
@@ -361,7 +363,7 @@ main {
       }
       .answer {
         overflow: hidden;
-        transition: all 0.6s ease;
+        // transition: all 0.6s ease;
 
         p {
           padding-bottom: 19px;

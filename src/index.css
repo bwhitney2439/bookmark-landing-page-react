@@ -190,6 +190,7 @@ main .features-container .features-container-header {
 }
 
 main .features-container .features-container-tabs {
+  position: relative;
   width: 730px;
   height: 49px;
   display: -webkit-box;
@@ -213,10 +214,23 @@ main .features-container .features-container-tabs a {
   transition: border-bottom 0.3s ease-in-out;
 }
 
-main .features-container .features-container-tabs a.selected {
-  -webkit-transition: border-bottom 0.3s ease-in-out;
-  transition: border-bottom 0.3s ease-in-out;
-  border-bottom: 4px solid #fa5757;
+main .features-container .features-container-tabs .slider {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 243px;
+  background-color: #fa5757;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+}
+
+main .features-container .features-container-tabs .slider.middle {
+  left: 243px;
+}
+
+main .features-container .features-container-tabs .slider.right {
+  left: 486px;
 }
 
 main .features-container .features-container-slideshow {
@@ -225,7 +239,9 @@ main .features-container .features-container-slideshow {
 }
 
 main .features-container .features-container-slideshow .tab {
-  display: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -233,22 +249,8 @@ main .features-container .features-container-slideshow .tab {
       -ms-flex-align: center;
           align-items: center;
   height: 346px;
-}
-
-main .features-container .features-container-slideshow .tab.active {
-  -webkit-animation-name: tab-content;
-          animation-name: tab-content;
-  -webkit-animation-direction: normal;
-          animation-direction: normal;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
-  -webkit-animation-timing-function: ease-in-out;
-          animation-timing-function: ease-in-out;
-  -webkit-animation-iteration-count: 1;
-          animation-iteration-count: 1;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  -webkit-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
 }
 
 main .features-container .features-container-slideshow .tab .tab-details {
@@ -427,8 +429,6 @@ main .faq-container .faq-container-menu .question p {
 
 main .faq-container .faq-container-menu .question .image {
   padding-right: 24px;
-  -webkit-transition: all 0.6s ease;
-  transition: all 0.6s ease;
   width: 43px;
   height: 12px;
   stroke: #5368df;
@@ -444,8 +444,6 @@ main .faq-container .faq-container-menu .question .rotate {
 
 main .faq-container .faq-container-menu .answer {
   overflow: hidden;
-  -webkit-transition: all 0.6s ease;
-  transition: all 0.6s ease;
 }
 
 main .faq-container .faq-container-menu .answer p {

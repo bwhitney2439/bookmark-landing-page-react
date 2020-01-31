@@ -1,8 +1,7 @@
 import React from "react";
-import Features from "./Features";
+import Features from "./Features/Features";
 import Extensions from "./Extensions";
 import Faq from "./FAQ/Faq";
-// import { ReactComponent as Hero } from "./images/illustration-hero.svg";
 
 const Main = () => {
   return (
@@ -23,7 +22,7 @@ const Main = () => {
               <button>Get it on Firefox</button>
             </div>
           </div>
-          {/* <Hero /> */}
+
           <img src={require("./images/illustration-hero.svg")} alt="" />
         </div>
         <div class="curved-rectangle"></div>
