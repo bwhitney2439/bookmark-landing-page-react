@@ -425,19 +425,27 @@ main .faq-container .faq-container-menu .question p {
   opacity: 100%;
 }
 
-main .faq-container .faq-container-menu .question img {
+main .faq-container .faq-container-menu .question .image {
   padding-right: 24px;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
+  width: 43px;
+  height: 12px;
+  stroke: #5368df;
+  -webkit-transform-origin: 10px 5px;
+          transform-origin: 10px 5px;
+}
+
+main .faq-container .faq-container-menu .question .rotate {
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+  stroke: #fa5757;
 }
 
 main .faq-container .faq-container-menu .answer {
   overflow: hidden;
-  -webkit-transition: all 0.5s ease-in-out;
-  transition: all 0.5s ease-in-out;
-  line-height: 0;
-}
-
-main .faq-container .faq-container-menu .answer.active {
-  line-height: 1.5;
+  -webkit-transition: all 0.6s ease;
+  transition: all 0.6s ease;
 }
 
 main .faq-container .faq-container-menu .answer p {
@@ -562,77 +570,5 @@ footer .footer-container .social-icons {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 88px;
-}
-
-@-webkit-keyframes tab-content {
-  from {
-    opacity: 0;
-    -webkit-transform: translateX(5%);
-            transform: translateX(5%);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
-  }
-}
-
-@keyframes tab-content {
-  from {
-    opacity: 0;
-    -webkit-transform: translateX(5%);
-            transform: translateX(5%);
-  }
-  to {
-    opacity: 1;
-    -webkit-transform: translateX(0%);
-            transform: translateX(0%);
-  }
-}
-
-@-webkit-keyframes answer-content {
-  0% {
-    width: 0;
-  }
-  30% {
-    width: 30%;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-@keyframes answer-content {
-  0% {
-    width: 0;
-  }
-  30% {
-    width: 30%;
-  }
-  to {
-    width: 100%;
-  }
-}
-
-.example-enter {
-  max-height: 0;
-  overflow: hidden;
-}
-
-.example-enter.example-enter-active {
-  max-height: 200px;
-  -webkit-transition: all 500ms ease-in-out;
-  transition: all 500ms ease-in-out;
-}
-
-.example-leave {
-  max-height: 200px;
-}
-
-.example-leave.example-leave-active {
-  max-height: 0;
-  overflow: hidden;
-  -webkit-transition: all 500ms ease-in-out;
-  transition: all 500ms ease-in-out;
 }
 /*# sourceMappingURL=index.css.map */

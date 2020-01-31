@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Features from "./Features";
 import Extensions from "./Extensions";
-import Faq from "./Faq";
+import Faq from "./FAQ/Faq";
 // import { ReactComponent as Hero } from "./images/illustration-hero.svg";
 
 const Main = () => {

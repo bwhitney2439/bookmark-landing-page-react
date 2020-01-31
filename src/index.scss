@@ -57,9 +57,7 @@ header {
     height: 40px;
     max-width: 1104px;
     margin: 48px auto 108px auto;
-
     justify-content: space-between;
-    // padding: 5% 10%;
 
     .nav-bar-container-links {
       font-size: 13px;
@@ -155,7 +153,6 @@ main {
     position: relative;
 
     margin-bottom: 149px;
-    // padding: 5% 10%;
 
     .features-container-header {
       display: flex;
@@ -173,7 +170,6 @@ main {
       height: 49px;
       display: flex;
       justify-content: space-around;
-      //   border-bottom: 1px solid rgb(155, 155, 155);
       margin: auto;
       margin-bottom: 72px;
 
@@ -350,24 +346,22 @@ main {
           opacity: 100%;
         }
 
-        img {
+        .image {
           padding-right: 24px;
-          // float: right;
+          transition: all 0.6s ease;
+          width: 43px;
+          height: 12px;
+          stroke: $softblue;
+          transform-origin: 10px 5px;
+        }
+        .rotate {
+          transform: rotate(-180deg);
+          stroke: $softred;
         }
       }
       .answer {
         overflow: hidden;
-        transition: all 0.5s ease-in-out;
-        line-height: 0;
-        // padding-bottom: 19px;
-        // max-height: 0;
-        // overflow: hidden;
-        // transition: max-height 0.5s ease-in-out;
-
-        &.active {
-          line-height: 1.5;
-          //   max-height: 500px;
-        }
+        transition: all 0.6s ease;
 
         p {
           padding-bottom: 19px;
@@ -473,76 +467,4 @@ footer {
       width: 88px;
     }
   }
-}
-
-// Animations
-
-@keyframes tab-content {
-  from {
-    opacity: 0;
-    transform: translateX(5%);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0%);
-  }
-}
-
-@keyframes answer-content {
-  0% {
-    width: 0;
-    // transform: translateX(5%);
-  }
-  30% {
-    width: 30%;
-  }
-
-  to {
-    width: 100%;
-    // transform: translateX(0%);
-  }
-}
-
-.example-enter {
-  max-height: 0;
-  overflow: hidden;
-  // opacity: 0.1;
-}
-
-.example-enter.example-enter-active {
-  max-height: 200px;
-  // opacity: 1;
-  transition: all 500ms ease-in-out;
-}
-
-.example-leave {
-  max-height: 200px;
-  // opacity: 1;
-}
-
-.example-leave.example-leave-active {
-  // opacity: 0;
-  max-height: 0;
-  overflow: hidden;
-  transition: all 500ms ease-in-out;
-}
-
-// Arrow Icon React Animation
-
-.icon-enter {
-  opacity: 0.1;
-}
-
-.icon-enter.icon-enter-active {
-  opacity: 1;
-  transition: opacity 500ms ease-in-out;
-}
-
-.icon-leave {
-  opacity: 1;
-}
-
-.icon-leave.icon-leave-active {
-  opacity: 0;
-  transition: opacity 500ms ease-in-out;
 }
