@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Tab from "./Tab";
 import { ReactComponent as FeatureImage1 } from "../images/illustration-features-tab-1.svg";
 import { ReactComponent as FeatureImage2 } from "../images/illustration-features-tab-2.svg";
 import { ReactComponent as FeatureImage3 } from "../images/illustration-features-tab-3.svg";
-
+import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
 
 const FeaturesContainer = styled.div`
@@ -22,7 +22,7 @@ const FeaturesHeader = styled.div`
   margin-bottom: 72px;
 `;
 
-const FeaturesTabs = styled.div`
+const FeaturesTabsContainer = styled.div`
   position: relative;
   width: 730px;
   height: 49px;
@@ -32,37 +32,40 @@ const FeaturesTabs = styled.div`
   margin-bottom: 72px;
 `;
 
-const FeatureTab = styled.div`
+const FeaturesTabs = styled.div`
+  cursor: pointer;
   text-align: center;
-  text-decoration: none;
   height: 100%;
-  width: 243px;
+  width: 33.333%;
   font-size: 16px;
   color: #252b46;
   border-bottom: 1px solid rgb(155, 155, 155);
   transition: border-bottom 0.3s ease-in-out;
 `;
 
-const FeatureTabSlider = styled.div`
+const FeatureTabSlider = styled(animated.hr)`
   position: absolute;
   bottom: 0;
   left: 0;
   height: 4px;
-  width: 243px;
+  width: 33.333%;
   background-color: #fa5757;
-  transition: all 0.6s ease;
-  cursor: pointer;
-
-  &.middle {
-    left: 243px;
-  }
-
-  &.right {
-    left: 486px;
-  }
 `;
 const Features = () => {
-  const [activeTab, setActiveTab] = useState("");
+  const [myTab, setMyTab] = useState("");
+
+  // const [activeTab, setActiveTab] = useState("");
+  const sliderRef = useRef(null);
+  // const sliderRef = useRef(null);
+
+  // useEffect(() => {
+  //   console.log(sliderRef.current.getBoundingClientRect().left);
+  // }, []);
+
+  const slide = useSpring({
+    left: myTab === "middle" ? "33.333%" : myTab === "right" ? "66.666%" : "0%",
+    from: { left: "0%" }
+  });
 
   return (
     <FeaturesContainer id="features">
@@ -74,34 +77,37 @@ const Features = () => {
           them on the go.
         </p>
       </FeaturesHeader>
-      <FeaturesTabs>
-        <FeatureTab
+      <FeaturesTabsContainer>
+        <FeaturesTabs
           onClick={e => {
-            setActiveTab("");
+            e.preventDefault();
+            setMyTab("");
           }}
         >
           Simple Bookmarking
-        </FeatureTab>
-        <FeatureTab
+        </FeaturesTabs>
+        <FeaturesTabs
           onClick={e => {
-            setActiveTab("middle");
+            e.preventDefault();
+            setMyTab("middle");
           }}
         >
           Speedy Searching
-        </FeatureTab>
+        </FeaturesTabs>
 
-        <FeatureTab
+        <FeaturesTabs
           onClick={e => {
-            setActiveTab("right");
+            e.preventDefault();
+            setMyTab("right");
           }}
         >
           Easy Sharing
-        </FeatureTab>
-        <FeatureTabSlider className={activeTab} />
-      </FeaturesTabs>
+        </FeaturesTabs>
+        <FeatureTabSlider style={slide} />
+      </FeaturesTabsContainer>
 
       <div class="features-container-slideshow">
-        {activeTab === "" ? (
+        {myTab === "" ? (
           <Tab>
             <FeatureImage1 />
             <div class="tab-details">
@@ -116,7 +122,7 @@ const Features = () => {
           </Tab>
         ) : null}
 
-        {activeTab === "middle" ? (
+        {myTab === "middle" ? (
           <Tab>
             <FeatureImage2 />
             <div class="tab-details">
@@ -130,7 +136,7 @@ const Features = () => {
           </Tab>
         ) : null}
 
-        {activeTab === "right" ? (
+        {myTab === "right" ? (
           <Tab>
             <FeatureImage3 />
             <div class="tab-details">
