@@ -1,34 +1,77 @@
-import React, { Component } from "react";
+import React from "react";
+import ContactUs from "./Components/ContactUs";
+import { ReactComponent as LogoFooterBookmark } from "../src/images/logo-footer-bookmark.svg";
+import { ReactComponent as IconFacebook } from "../src/images/icon-facebook.svg";
+import { ReactComponent as IconTwitter } from "../src/images/icon-twitter.svg";
+import styled from "styled-components";
 
-export class Footer extends Component {
-  render() {
-    return (
-      <footer>
-        <section class="contactus-container" id="contact">
-          <p>35,000+ already joined</p>
-          <h2>Stay up-to-date with what we’re doing</h2>
+const FooterContainer = styled.section`
+  background-color: #252b46;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px 165px;
+`;
 
-          <div class="contactus-container-form">
-            <input type="email" name="" id="" />
-            <button>Contact Us</button>
-          </div>
-        </section>
+const FooterContainerLinks = styled.div`
+  display: flex;
+  width: 507px;
+  height: 17px;
+  justify-content: space-between;
+  align-items: center;
 
-        <section class="footer-container">
-          <div class="footer-container-links">
-            <img src={require("./images/logo-footer-bookmark.svg")} alt="" />
-            <p>features</p>
-            <p>pricing</p>
-            <p>contact</p>
-          </div>
-          <div class="social-icons">
-            <img src={require("./images/icon-facebook.svg")} alt="" />
-            <img src={require("./images/icon-twitter.svg")} alt="" />
-          </div>
-        </section>
-      </footer>
-    );
+  img {
+    color: white;
   }
-}
+
+  font-size: 13px;
+  letter-spacing: 1.5px;
+
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+
+    &:hover {
+      color: #fa5757;
+    }
+  }
+`;
+
+const SocialIcons = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 88px;
+
+  svg {
+    fill: #fff;
+
+    &:hover {
+      fill: #fa5757;
+    }
+  }
+`;
+
+const Footer = () => {
+  return (
+    <React.Fragment>
+      <ContactUs />
+
+      <FooterContainer>
+        <FooterContainerLinks>
+          <LogoFooterBookmark />
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#contact">Contact</a>
+        </FooterContainerLinks>
+        <SocialIcons>
+          <IconFacebook />
+          <IconTwitter />
+        </SocialIcons>
+      </FooterContainer>
+    </React.Fragment>
+  );
+};
 
 export default Footer;

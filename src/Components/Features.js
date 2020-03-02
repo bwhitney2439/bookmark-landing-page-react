@@ -84,6 +84,11 @@ const FeatureTabDetails = styled.div`
     color: white;
     box-shadow: 0px 8px 8px -4px rgba(73, 93, 207, 0.2);
     font-size: 14px;
+    &:hover {
+      background-color: white;
+      border: 2px solid #5368df;
+      color: #5368df;
+    }
   }
 `;
 

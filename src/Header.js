@@ -19,6 +19,10 @@ const NavBarLinks = styled.div`
     text-transform: uppercase;
     color: #252b46;
     margin-right: 48px;
+
+    &:hover {
+      color: #fa5757;
+    }
   }
 
   button {
@@ -45,17 +49,15 @@ const NavBarLinks = styled.div`
 
 const Header = () => {
   return (
-    <header>
-      <NavBarContainer>
-        <LogoBookmark />
-        <NavBarLinks>
-          <a href="#features">Features</a>
-          <a href="#pricing">Pricing</a>
-          <a href="#contact">Contact</a>
-          <button>Login</button>
-        </NavBarLinks>
-      </NavBarContainer>
-    </header>
+    <NavBarContainer>
+      <LogoBookmark />
+      <NavBarLinks>
+        <a href="#features">Features</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#contact">Contact</a>
+        <button>Login</button>
+      </NavBarLinks>
+    </NavBarContainer>
   );
 };
 
