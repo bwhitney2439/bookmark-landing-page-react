@@ -1,12 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap");
 
 // Primary
-$softblue: hsl(231, 69%, 60%);
+$softblue: #5368df;
 $softred: #fa5757;
 
 // Neutral
-$grayishblue: hsl(229, 8%, 60%);
-$verydarkblue: hsl(229, 31%, 21%);
+$grayishblue: #9194a1;
+$verydarkblue: #252b46;
 
 * {
   margin: 0;
@@ -50,154 +50,7 @@ button {
   font-weight: 500;
 }
 
-header {
-  .nav-bar-container {
-    display: flex;
-    align-items: center;
-    height: 40px;
-    max-width: 1104px;
-    margin: 48px auto 108px auto;
-    justify-content: space-between;
-
-    .nav-bar-container-links {
-      font-size: 13px;
-      letter-spacing: 1.5px;
-      a {
-        text-decoration: none;
-        text-transform: uppercase;
-        color: $verydarkblue;
-        margin-right: 48px;
-      }
-      button {
-        height: 40px;
-        width: 111px;
-        border: none;
-        background-color: $softred;
-        color: white;
-        border-radius: 5px;
-        text-transform: uppercase;
-        border: 1px inside $grayishblue;
-        box-shadow: 0px 8px 8px -4px rgba(73, 93, 207, 0.2);
-      }
-    }
-  }
-}
-
 main {
-  .bookmark {
-    position: relative;
-
-    .bookmark-container {
-      display: flex;
-      margin: 0 auto 80px auto;
-      max-width: 1184px;
-
-      .bookmark-container-header {
-        margin: 0 auto;
-        margin-right: 65px;
-        width: 540px;
-        height: 292px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        align-self: center;
-
-        p {
-          font-size: 18px;
-        }
-        .bookmark-container-buttons {
-          display: flex;
-
-          button {
-            border: none;
-            height: 48px;
-            border-radius: 5px;
-            width: 161px;
-            font-size: 14px;
-            font-weight: 600;
-
-            &:nth-child(1) {
-              background-color: $softblue;
-              color: white;
-              margin-right: 1rem;
-              box-shadow: 0px 8px 8px -4px rgba(74, 94, 208, 0.2);
-            }
-            &:nth-child(2) {
-              background-color: #f7f7f7;
-              color: $verydarkblue;
-              opacity: 75%;
-              box-shadow: 0px 8px 8px -4px rgba(73, 93, 207, 0.2);
-            }
-          }
-        }
-      }
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-    }
-    .curved-rectangle {
-      position: absolute;
-      right: 0;
-      bottom: 0;
-      z-index: -4;
-      width: 35%;
-      height: 352px;
-      background-color: $softblue;
-      border-top-left-radius: 316.5px;
-      border-bottom-left-radius: 316.5px;
-    }
-  }
-
-  .features-container-slideshow {
-    max-width: 1031px;
-    margin: auto;
-
-    .tab {
-      display: flex;
-
-      justify-content: space-between;
-      align-items: center;
-      height: 346px;
-      // transition: opacity 0.5s ease;
-
-      .tab-details {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 445px;
-        height: 232px;
-
-        button {
-          width: 114px;
-          height: 48px;
-          border-radius: 5px;
-          border: none;
-          background-color: $softblue;
-          color: white;
-          box-shadow: 0px 8px 8px -4px rgba(73, 93, 207, 0.2);
-          font-size: 14px;
-        }
-      }
-    }
-
-    .hide {
-      display: none;
-    }
-  }
-
-  .curved-rectangle {
-    position: absolute;
-    left: 0;
-    bottom: -10%;
-    z-index: -4;
-    width: 45%;
-    height: 352px;
-    background-color: $softblue;
-    border-top-right-radius: 316.5px;
-    border-bottom-right-radius: 316.5px;
-  }
-
   .extensions-container {
     padding: 5% 0;
 

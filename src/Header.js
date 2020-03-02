@@ -1,22 +1,62 @@
-import React, { Component } from "react";
+import React from "react";
+import { ReactComponent as LogoBookmark } from "../src/images/logo-bookmark.svg";
+import styled from "styled-components";
 
-export class Header extends Component {
-  render() {
-    return (
-      <header>
-        <div class="nav-bar-container">
-          <img src={require("./images/logo-bookmark.svg")} alt="" />
+const NavBarContainer = styled.div`
+  display: flex;
+  align-items: center;
+  height: 40px;
+  max-width: 1104px;
+  margin: 48px auto 108px auto;
+  justify-content: space-between;
+`;
+const NavBarLinks = styled.div`
+  font-size: 13px;
+  letter-spacing: 1.5px;
 
-          <div class="nav-bar-container-links">
-            <a href="#features">Features</a>
-            <a href="#pricing">Pricing</a>
-            <a href="#contact">Contact</a>
-            <button>Login</button>
-          </div>
-        </div>
-      </header>
-    );
+  a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #252b46;
+    margin-right: 48px;
   }
-}
+
+  button {
+    height: 40px;
+    width: 111px;
+    border: none;
+    font-size: 13px;
+    font-weight: 500;
+    background-color: #fa5757;
+    letter-spacing: 1.5px;
+    color: white;
+    border-radius: 5px;
+    text-transform: uppercase;
+    border: 1px inside #9194a1;
+    box-shadow: 0px 8px 8px -4px rgba(73, 93, 207, 0.2);
+
+    &:hover {
+      background-color: white;
+      color: #fa5757;
+      border: 2px solid #fa5757;
+    }
+  }
+`;
+
+const Header = () => {
+  return (
+    <header>
+      <NavBarContainer>
+        <LogoBookmark />
+        <NavBarLinks>
+          <a href="#features">Features</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#contact">Contact</a>
+          <button>Login</button>
+        </NavBarLinks>
+      </NavBarContainer>
+    </header>
+  );
+};
 
 export default Header;

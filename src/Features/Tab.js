@@ -1,5 +1,15 @@
 import React from "react";
 import { useSpring, animated } from "react-spring";
+import styled from "styled-components";
+
+const FeaturesTab = styled(animated.div)`
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+  height: 346px;
+`;
+
 const Tab = props => {
   const fadeIn = useSpring({
     opacity: 1,
@@ -7,11 +17,7 @@ const Tab = props => {
     config: { duration: 1000 }
   });
 
-  return (
-    <animated.div class="tab" style={fadeIn}>
-      {props.children}
-    </animated.div>
-  );
+  return <FeaturesTab style={fadeIn}>{props.children}</FeaturesTab>;
 };
 
 export default Tab;

@@ -2,13 +2,17 @@ import React from "react";
 import Features from "./Features/Features";
 import Extensions from "./Extensions";
 import Faq from "./FAQ/Faq";
+import Bookmark from './Bookmark/Bookmark'
+
+
 
 const Main = () => {
   return (
     <main>
-      <section class="bookmark" id="title">
-        <div class="bookmark-container">
-          <div class="bookmark-container-header">
+      <Bookmark />
+      {/* <section className="bookmark" id="title">
+        <div className="bookmark-container">
+          <div className="bookmark-container-header">
             <h1>A Simple Bookmark Manager</h1>
 
             <p>
@@ -17,7 +21,7 @@ const Main = () => {
               for free.
             </p>
 
-            <div class="bookmark-container-buttons">
+            <div className="bookmark-container-buttons">
               <button>Get it on Chrome</button>
               <button>Get it on Firefox</button>
             </div>
@@ -25,8 +29,8 @@ const Main = () => {
 
           <img src={require("./images/illustration-hero.svg")} alt="" />
         </div>
-        <div class="curved-rectangle"></div>
-      </section>
+        <div className="curved-rectangle"></div>
+      </section> */}
 
       <Features />
 
