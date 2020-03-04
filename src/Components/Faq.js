@@ -41,6 +41,10 @@ const FAQContainerMenu = styled.div`
   max-width: 540px;
   margin: 0 auto;
   margin-bottom: 54px;
+
+  hr {
+    opacity: 50%;
+  }
 `;
 
 const Faq = () => {
@@ -76,7 +80,7 @@ const Faq = () => {
     }
   ];
 
-  const [questionsAndAnswers, setQuestionsAndAnswers] = useState(INITIAL_STATE);
+  const [questionsAndAnswers] = useState(INITIAL_STATE);
 
   return (
     <FAQContainer>
@@ -88,7 +92,7 @@ const Faq = () => {
         </p>
       </FAQContainerHeader>
       <FAQContainerMenu>
-        <hr style={{ opacity: "50%" }} />
+        <hr />
         {questionsAndAnswers.map(questionsAndAnswer => {
           return (
             <Accordian

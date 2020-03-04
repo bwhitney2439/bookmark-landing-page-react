@@ -2,6 +2,12 @@ import React, { useState, useRef } from "react";
 import { useSpring, animated } from "react-spring";
 import styled from "styled-components";
 
+const AccordianContainer = styled.div`
+  hr {
+    opacity: 50%;
+  }
+`;
+
 const Question = styled.div`
   display: flex;
   align-items: center;
@@ -49,7 +55,7 @@ const Accordian = props => {
   });
 
   return (
-    <React.Fragment>
+    <AccordianContainer>
       <Question onClick={() => setActive(!active)}>
         <p>{props.question}</p>
 
@@ -60,8 +66,8 @@ const Accordian = props => {
       <Answer style={slideDown} ref={answerRef}>
         <p>{props.answer}</p>
       </Answer>
-      <hr style={{ opacity: "50%" }} />
-    </React.Fragment>
+      <hr />
+    </AccordianContainer>
   );
 };
 
