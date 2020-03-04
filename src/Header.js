@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { ReactComponent as LogoBookmark } from "../src/images/logo-bookmark.svg";
 import styled from "styled-components";
 
@@ -9,6 +9,37 @@ const NavBarContainer = styled.div`
   max-width: 1104px;
   margin: 48px auto 108px auto;
   justify-content: space-between;
+
+  @media (max-width: 375px) {
+    margin: 40px 32px 80px 32px;
+
+    .menu-button {
+      position: relative;
+
+      .burger-bar1,
+      .burger-bar2,
+      .burger-bar3 {
+        content: "";
+        width: 28px;
+        height: 3px;
+        background-color: black;
+        margin: 6px 0;
+        transition: 0.3s;
+      }
+    }
+
+    .active {
+      .burger-bar1 {
+        transform: rotate(-45deg) translate(-8px, 5px);
+      }
+      .burger-bar2 {
+        opacity: 0;
+      }
+      .burger-bar3 {
+        transform: rotate(45deg) translate(-8px, -5px);
+      }
+    }
+  }
 `;
 const NavBarLinks = styled.div`
   font-size: 13px;
@@ -45,9 +76,13 @@ const NavBarLinks = styled.div`
       border: 2px solid #fa5757;
     }
   }
+  @media (max-width: 375px) {
+    display: none;
+  }
 `;
 
 const Header = () => {
+  const [burgerActive, setBurgerActive] = useState(false);
   return (
     <NavBarContainer>
       <LogoBookmark />
@@ -57,6 +92,14 @@ const Header = () => {
         <a href="#contact">Contact</a>
         <button>Login</button>
       </NavBarLinks>
+      <div
+        class={`menu-button ${burgerActive ? "active" : ""}`}
+        onClick={() => setBurgerActive(!burgerActive)}
+      >
+        <div class="burger-bar1"></div>
+        <div class="burger-bar2"></div>
+        <div class="burger-bar3"></div>
+      </div>
     </NavBarContainer>
   );
 };

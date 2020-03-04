@@ -20,6 +20,26 @@ const FeaturesHeader = styled.div`
   height: 152px;
   margin: auto;
   margin-bottom: 72px;
+
+  @media (max-width: 375px) {
+    width: 311px;
+    height: 152px;
+
+    h2 {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 52px;
+      text-align: center;
+      letter-spacing: -0.075px;
+    }
+    p{
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 25px;
+      text-align: center;
+    }
+    }
+  }
 `;
 
 const FeaturesTabsContainer = styled.div`
@@ -30,6 +50,12 @@ const FeaturesTabsContainer = styled.div`
   justify-content: space-around;
   margin: auto;
   margin-bottom: 72px;
+  @media (max-width: 375px) {
+    border-top: 1px solid rgba(73, 93, 207, 0.2);
+    flex-direction: column;
+    width: 311px;
+    height: 175px;
+  }
 `;
 
 const FeaturesTabs = styled.div`
@@ -45,15 +71,25 @@ const FeaturesTabs = styled.div`
   &:hover {
     color: #fa5757;
   }
+  @media (max-width: 375px) {
+    padding: 20px;
+    width: 100%;
+    border-bottom: 1px solid rgba(73, 93, 207, 0.2);
+    opacity: 0.75;
+  }
 `;
 
 const FeatureTabSlider = styled(animated.hr)`
   position: absolute;
   bottom: 0;
-  left: 0;
+  left: 0%;
   height: 4px;
   width: 33.333%;
   background-color: #fa5757;
+
+  @media (max-width: 375px) {
+    left: 33.333%;
+  }
 `;
 
 const FeatureCurvedRectangle = styled.div`

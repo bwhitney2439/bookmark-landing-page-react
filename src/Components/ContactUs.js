@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { ReactComponent as ExclamationLogo } from "../images/exclamation-logo.svg";
 import styled, { css } from "styled-components";
 import { useSpring, animated } from "react-spring";
+
 const ContactUsContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -132,7 +133,7 @@ const ContactUs = () => {
             value={email}
             onChange={e => setEmail(e.target.value)}
           />
-          <Exclamation />
+          {isError && <Exclamation />}
           <Button onClick={handleClick}>Contact Us</Button>
         </InputContainer>
         {isError && (

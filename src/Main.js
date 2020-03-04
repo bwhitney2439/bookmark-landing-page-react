@@ -6,7 +6,7 @@ import Bookmark from "./Components/Bookmark";
 
 const Main = () => {
   return (
-    <main>
+    <React.Fragment>
       <Bookmark />
 
       <Features />
@@ -14,7 +14,7 @@ const Main = () => {
       <Extensions />
 
       <Faq />
-    </main>
+    </React.Fragment>
   );
 };
 

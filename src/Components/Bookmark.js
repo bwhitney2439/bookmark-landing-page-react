@@ -1,5 +1,5 @@
 import React from "react";
-import { ReactComponent as IllustrationHeroImage } from "../images/illustration-hero.svg";
+import { ReactComponent as IllustrationHeroImage } from "../images/illustration-hero-2.svg";
 import styled, { css } from "styled-components";
 
 const BookmarkSection = styled.section`
@@ -10,6 +10,11 @@ const BookmarkContainer = styled.div`
   display: flex;
   margin: 0 auto 80px auto;
   max-width: 1184px;
+
+  @media (max-width: 375px) {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
 `;
 
 const BookmarkHeader = styled.div`
@@ -24,6 +29,30 @@ const BookmarkHeader = styled.div`
 
   p {
     font-size: 18px;
+  }
+
+  @media (max-width: 375px) {
+    width: 311px;
+    height: 276px;
+    margin: 94px 32px 140px 32px;
+    text-align: center;
+
+    h1 {
+      font-size: 30px;
+    }
+
+    p {
+      opacity: 0.5;
+      z-index: 4;
+      width: 311px;
+      height: 100px;
+      color: #242a45;
+      font-family: Rubik;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 25px;
+      text-align: center;
+    }
   }
 `;
 
@@ -71,6 +100,11 @@ const BookmarkButtons = styled.button`
 const BookmarkHeroImage = styled(IllustrationHeroImage)`
   max-width: 100%;
   height: auto;
+
+  @media (max-width: 375px) {
+    width: 313px;
+    height: 209px;
+  }
 `;
 
 const BookmarkCurvedRectangle = styled.div`
@@ -83,6 +117,13 @@ const BookmarkCurvedRectangle = styled.div`
   background-color: #5368df;
   border-top-left-radius: 316.5px;
   border-bottom-left-radius: 316.5px;
+
+  @media (max-width: 375px) {
+    top: 7%;
+    z-index: -4;
+    width: 80%;
+    height: 203px;
+  }
 `;
 
 const Bookmark = () => {
