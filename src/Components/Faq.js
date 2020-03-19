@@ -24,6 +24,12 @@ const FAQContainer = styled.section`
       color: #5368df;
     }
   }
+
+  @media (max-width: 375px) {
+    padding: unset;
+
+    margin-bottom: 123px;
+  }
 `;
 
 const FAQContainerHeader = styled.div`
@@ -35,6 +41,26 @@ const FAQContainerHeader = styled.div`
   height: 124px;
   margin: 0 auto;
   margin-bottom: 56px;
+
+  @media (max-width: 375px) {
+    width: 311px;
+    height: 151px;
+    margin-bottom: 65px;
+    h2 {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 30px;
+      text-align: center;
+      letter-spacing: -0.075px;
+    }
+
+    p {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 25px;
+      text-align: center;
+    }
+  }
 `;
 
 const FAQContainerMenu = styled.div`
@@ -44,6 +70,11 @@ const FAQContainerMenu = styled.div`
 
   hr {
     opacity: 50%;
+  }
+
+  @media (max-width: 375px) {
+    width: 313px;
+    margin-bottom: 48px;
   }
 `;
 

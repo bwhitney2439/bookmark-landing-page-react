@@ -6,6 +6,14 @@ const AccordianContainer = styled.div`
   hr {
     opacity: 50%;
   }
+  @media (max-width: 375px) {
+    p {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 30px;
+      letter-spacing: 0.140625px;
+    }
+  }
 `;
 
 const Question = styled.div`
@@ -22,15 +30,28 @@ const Question = styled.div`
     color: #252b46;
     opacity: 100%;
   }
+
+  @media (max-width: 375px) {
+    postition: relative;
+    p {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 32px;
+    }
+  }
 `;
 
 const Image = styled(animated.svg)`
   padding-right: 24px;
-  // transition: all 0.6s ease;
   width: 43px;
   height: 12px;
   stroke: #5368df;
   transform-origin: 10px 5px;
+
+  @media (max-width: 375px) {
+    position: absolute;
+    right: 2%;
+  }
 `;
 
 const Answer = styled(animated.div)`

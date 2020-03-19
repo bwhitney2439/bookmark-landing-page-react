@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Tab from "./Tab";
-import { ReactComponent as FeatureImage1 } from "../images/illustration-features-tab-1.svg";
+import { ReactComponent as FeatureImage1 } from "../images/illustration-features-tab-1-test.svg";
 import { ReactComponent as FeatureImage2 } from "../images/illustration-features-tab-2.svg";
 import { ReactComponent as FeatureImage3 } from "../images/illustration-features-tab-3.svg";
 import { useSpring, animated } from "react-spring";
@@ -20,10 +20,11 @@ const FeaturesHeader = styled.div`
   height: 152px;
   margin: auto;
   margin-bottom: 72px;
-
+  
   @media (max-width: 375px) {
     width: 311px;
     height: 152px;
+    margin-bottom: 40px;
 
     h2 {
       font-size: 24px;
@@ -79,7 +80,7 @@ const FeaturesTabs = styled.div`
   }
 `;
 
-const FeatureTabSlider = styled(animated.hr)`
+const FeatureTabSliderDesktop = styled(animated.hr)`
   position: absolute;
   bottom: 0;
   left: 0%;
@@ -88,7 +89,29 @@ const FeatureTabSlider = styled(animated.hr)`
   background-color: #fa5757;
 
   @media (max-width: 375px) {
-    left: 33.333%;
+    display: none;
+  }
+`;
+const FeatureTabSliderMobile = styled(animated.hr)`
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 33.33%;
+  height: 4px;
+  width: 33.333%;
+  background-color: #fa5757;
+
+  @media (max-width: 375px) {
+    display: unset;
+  }
+`;
+
+const FeatureSlideshowContainer = styled.div`
+  max-width: 1031px;
+  margin: auto;
+
+  @media (max-width: 375px) {
+    position: relative;
   }
 `;
 
@@ -102,6 +125,12 @@ const FeatureCurvedRectangle = styled.div`
   background-color: #5368df;
   border-top-right-radius: 316.5px;
   border-bottom-right-radius: 316.5px;
+
+  @media (max-width: 375px) {
+    height: 203px;
+    width: 80%;
+    top: 9%;
+  }
 `;
 
 const FeatureTabDetails = styled.div`
@@ -126,19 +155,43 @@ const FeatureTabDetails = styled.div`
       color: #5368df;
     }
   }
-`;
 
-const FeatureSlideshowContainer = styled.div`
-  max-width: 1031px;
-  margin: auto;
+  @media (max-width: 375px) {
+    max-width: 311px;
+    max-height: 152px;
+    text-align: center;
+    margin-top: 72px;
+
+    h2 {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 52px;
+      text-align: center;
+      letter-spacing: -0.075px;
+    }
+
+    p {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 25px;
+    }
+    button {
+      display: none;
+    }
+  }
 `;
 
 const Features = () => {
   const [myTab, setMyTab] = useState("");
 
-  const slide = useSpring({
+  const slideLeftRight = useSpring({
     left: myTab === "middle" ? "33.333%" : myTab === "right" ? "66.666%" : "0%",
     from: { left: "0%" }
+  });
+  const slideUpDown = useSpring({
+    bottom:
+      myTab === "middle" ? "33.333%" : myTab === "right" ? "0%" : "66.666%",
+    from: { bottom: "33.33%" }
   });
 
   return (
@@ -174,7 +227,8 @@ const Features = () => {
         >
           Easy Sharing
         </FeaturesTabs>
-        <FeatureTabSlider style={slide} />
+        <FeatureTabSliderDesktop style={slideLeftRight} />
+        <FeatureTabSliderMobile style={slideUpDown} />
       </FeaturesTabsContainer>
 
       <FeatureSlideshowContainer>
@@ -221,8 +275,8 @@ const Features = () => {
             </FeatureTabDetails>
           </Tab>
         ) : null}
+        <FeatureCurvedRectangle />
       </FeatureSlideshowContainer>
-      <FeatureCurvedRectangle />
     </FeaturesContainer>
   );
 };

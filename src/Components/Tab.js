@@ -7,7 +7,21 @@ const FeaturesTab = styled(animated.div)`
 
   justify-content: space-between;
   align-items: center;
-  height: 346px;
+
+  svg {
+    width: 536px;
+    height: 346px;
+  }
+
+  @media (max-width: 375px) {
+    display: flex;
+    flex-direction: column;
+
+    svg {
+      width: 311px;
+      height: 201px;
+    }
+  }
 `;
 
 const Tab = props => {

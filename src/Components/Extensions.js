@@ -7,6 +7,11 @@ import styled from "styled-components";
 
 const ExtensionsContainer = styled.section`
   padding: 5% 0;
+
+  @media (max-width: 375px) {
+    padding: unset;
+    margin-bottom: 139px;
+  }
 `;
 
 const ExtensionsContainerHeading = styled.div`
@@ -15,6 +20,26 @@ const ExtensionsContainerHeading = styled.div`
   text-align: center;
   margin: auto;
   margin-bottom: 48px;
+
+  @media (max-width: 375px) {
+    width: 311px;
+    height: 127px;
+
+    h2 {
+      font-size: 24px;
+      font-weight: 500;
+      line-height: 52px;
+      text-align: center;
+      letter-spacing: -0.075px;
+    }
+
+    p {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 25px;
+      text-align: center;
+    }
+  }
 `;
 
 const ExtensionsContainerCards = styled.div`
@@ -23,6 +48,13 @@ const ExtensionsContainerCards = styled.div`
   width: 910px;
   height: 451px;
   margin: auto;
+
+  @media (max-width: 375px) {
+    flex-direction: column;
+    align-items: center;
+    height: unset;
+    width: unset;
+  }
 `;
 
 const Card = styled.div`
@@ -72,6 +104,14 @@ const Card = styled.div`
       background-color: white;
       border: 2px solid #5368df;
       color: #5368df;
+    }
+  }
+
+  @media (max-width: 375px) {
+    margin-bottom: 40px;
+    &:nth-child(3) {
+      align-self: unset;
+      margin-bottom: unset;
     }
   }
 `;
