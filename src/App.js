@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "./Header";
 import Main from "./Main";
 import Footer from "./Footer";
@@ -14,6 +14,7 @@ const App = () => {
 
   return (
     <React.Fragment>
+      <div>{data}</div>;
       <Header />
       <Main />
       <Footer />
