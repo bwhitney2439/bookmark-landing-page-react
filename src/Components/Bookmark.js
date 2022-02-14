@@ -69,7 +69,7 @@ const BookmarkButtons = styled.button`
   font-size: 14px;
   font-weight: 600;
   outline: none;
-  ${props =>
+  ${(props) =>
     props.primary &&
     css`
       background: #5368df;
@@ -82,7 +82,7 @@ const BookmarkButtons = styled.button`
         color: #5368df;
       }
     `}
-  ${props =>
+  ${(props) =>
     props.secondary &&
     css`
       background-color: #f7f7f7;

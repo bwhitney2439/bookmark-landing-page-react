@@ -62,17 +62,17 @@ const Answer = styled(animated.div)`
   }
 `;
 
-const Accordian = props => {
+const Accordian = (props) => {
   const [active, setActive] = useState(false);
   const answerRef = useRef(null);
 
   const slideDown = useSpring({
-    maxHeight: active ? `${answerRef.current.scrollHeight}px` : `0px`
+    maxHeight: active ? `${answerRef.current.scrollHeight}px` : `0px`,
   });
 
   const rotate = useSpring({
-    transform: active ? "rotate(-180deg)" : "rotate(0deg)",
-    stroke: active ? "#fa5757" : "#5368df"
+    transform: active ? "rotate(0deg)" : "rotate(-180deg)",
+    stroke: active ? "#fa5757" : "#5368df",
   });
 
   return (
@@ -81,7 +81,7 @@ const Accordian = props => {
         <p>{props.question}</p>
 
         <Image style={rotate} xmlns="http://www.w3.org/2000/svg">
-          <path fill="none" stroke-width="3" d="M1 1l8 8 8-8" />>
+          <path fill="none" stroke-width="3" d="M1 1l8 8 8-8" />
         </Image>
       </Question>
       <Answer style={slideDown} ref={answerRef}>
